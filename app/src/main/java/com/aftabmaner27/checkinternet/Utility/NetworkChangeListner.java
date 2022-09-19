@@ -15,7 +15,7 @@ import com.aftabmaner27.checkinternet.R;
 public class NetworkChangeListner extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (Common.isConnectedToInternet(context)) {    //INTERNET IS NOT CONNECTED
+        if (!Common.isConnectedToInternet(context)) {    //INTERNET IS NOT CONNECTED
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             View layout_dailog = LayoutInflater.from(context).inflate(R.layout.check_internet_dailog, null);
             builder.setView(layout_dailog);
